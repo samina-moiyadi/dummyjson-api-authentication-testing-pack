@@ -1,7 +1,8 @@
 # DummyJSON API Authentication Testing Pack
 
-A Postman API testing collection focused on **authentication workflows**, built for QA practice and portfolio demonstration.
-This pack covers positive, negative, and edge-case scenarios commonly validated in real-world API testing.
+A Postman API testing collection focused on authentication scenarios for QA practice and portfolio use.
+
+**Version:** v1.0 – Authentication Testing Pack
 
 ---
 
@@ -15,6 +16,7 @@ It includes:
 - Login failures with invalid or missing data
 - Method validation and payload validation
 - Edge cases such as extra parameters and incorrect request formats
+- SQL Injection attempt in login credentials
 
 Each request contains:
 
@@ -26,15 +28,20 @@ Each request contains:
 ---
 
 ## Folder Structure
-
-DummyJSON Auth –  Executed Core Scenarios
+```text
+DummyJSON Auth – Executed Core Scenarios
 └── Authentication
    ├── AUTH_001 - Login - Valid Credentials
    ├── AUTH_002 - Login - Invalid Password
+   ├── AUTH_003 - Login - Invalid Username
    ├── AUTH_004 - Login - Missing Password
+   ├── AUTH_005 - Login - Missing Username
    ├── AUTH_006 - Login - Empty Payload
-   └── AUTH_008 - Login - Wrong HTTP Method
-
+   ├── AUTH_007 - Login with Extra Parameters
+   ├── AUTH_008 - Login - Wrong HTTP Method
+   ├── AUTH_009 - Login with Malformed JSON
+   └── AUTH_010 - Login - SQL Injection Attempt
+```
 ---
 
 ## Environment Variables
@@ -79,12 +86,15 @@ Valid credentials are sourced from the official DummyJSON documentation and are 
 
 **Negative & Validation Scenarios**
 
-- Invalid password → 400
+- Invalid username or password → 400
 - Missing mandatory fields → 400
-- Empty payload → 400
+- Empty payload or malformed JSON → 400
 - Incorrect HTTP method → 404 / 405
+- SQL Injection attempt → 400
 
 These scenarios demonstrate how APIs handle incorrect input, validation gaps, and unexpected client behavior.
+
+Assertions validate response behavior without relying on exact error messages, ensuring resilience against backend message changes.
 
 ---
 
@@ -96,7 +106,8 @@ This collection is designed to showcase:
 - Clear separation of positive vs negative testing
 - Real-world QA validation mindset
 
-It is suitable for **QA portfolios, interview discussions, and freelance proof-of-work**.
+This is the initial stable version (v1.0) of the authentication testing pack.
+It is suitable for **QA portfolios, interview discussions, and freelance proof-of-work and reusable starter packs for API testing projects**.
 
 ## Author
 
