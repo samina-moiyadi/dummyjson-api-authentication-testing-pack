@@ -29,6 +29,16 @@ Each request contains:
 
 ## Folder Structure
 ```text
+postman-collection/
+test-cases/
+docs/
+```
+This repository is organized to separate executable tests, documented test cases, and supporting test approach notes.
+
+---
+
+## Postman Collection Structure
+```text
 DummyJSON Auth – Executed Core Scenarios
 └── Authentication
    ├── AUTH_001 - Login - Valid Credentials
@@ -42,6 +52,8 @@ DummyJSON Auth – Executed Core Scenarios
    ├── AUTH_009 - Login with Malformed JSON
    └── AUTH_010 - Login - SQL Injection Attempt
 ```
+Each request is mapped to a corresponding test case ID for traceability with the Excel test case sheet.
+
 ---
 
 ## Environment Variables
@@ -107,7 +119,7 @@ This collection is designed to showcase:
 - Real-world QA validation mindset
 
 This is the initial stable version (v1.0) of the authentication testing pack.
-It is suitable for **QA portfolios, interview discussions, and freelance proof-of-work and reusable starter packs for API testing projects**.
+It is suitable for **QA portfolios, interview discussions, and freelance proof-of-work and reusable starter packs for API testing**.
 
 ## Author
 
